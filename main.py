@@ -7,7 +7,7 @@ from pyomo.util.infeasible import log_infeasible_constraints
 import logging
 from datetime import datetime
 import scipy.integrate as integrate
-from IPython import embed
+# from IPython import embed
 import pickle
 
 
