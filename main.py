@@ -355,7 +355,7 @@ def plotResults(time, z, u, time_mpc, u_mpc, every=1, ani=False):
         fig, axs = plt.subplots(3, 1, figsize=(6, 6),
                                 gridspec_kw={'height_ratios': [1, 1, 3]})
         plt.subplots_adjust(left = 0.15, top = 0.96, right = 0.95, bottom = 0.1,
-                            hspace = 0.5, wspace = 0.5)
+                            hspace = 0.45, wspace = 0.5)
 
         def get_arrow(ind):
             # Spacecraft
@@ -443,14 +443,14 @@ def plotResultsSimple(time, z, u, axs):
     axs[0].plot(time, z1)
     axs[0].set_ylabel(r'$\theta$ [rad]')
     axs[1].plot(time, z2)
-    axs[1].set_ylabel(r'$\omega_x$ [rad/s]')
+    axs[1].set_ylabel(r'$\omega$ [rad/s]')
     axs[2].plot(time, z3)
     axs[2].set_ylabel(r'$P_x$ [m]')
     axs[3].plot(time, z4)
     axs[3].set_ylabel(r'$P_z$ [m]')
     axs[3].set_xlabel('Time [sec]')
     axs[4].plot(time, np.linalg.norm(np.vstack((zNBar[2]-z3, zNBar[3]-z4)), axis=0))
-    axs[4].set_ylabel(r'$\| P_{error} \|$ [m]')
+    axs[4].set_ylabel(r'$\|\| P_{error} \|\|$ [m]')
     axs[5].plot(time, z5)
     axs[5].set_ylabel(r'$V_x$ [m/s]')
     axs[6].plot(time, z6)
@@ -458,7 +458,7 @@ def plotResultsSimple(time, z, u, axs):
     axs[7].plot(time[:-1], u1)
     axs[7].set_ylabel(r'$F$ [N]')
     axs[8].plot(time[:-1], np.array(u2)*180/np.pi)
-    axs[8].set_ylabel(r'$\delta_x$ [deg]')
+    axs[8].set_ylabel(r'$\delta$ [deg]')
     axs[9].plot(time, np.array(z7))
     axs[9].set_ylabel(r'$m_{prop}$ [kg]')
     axs[9].set_xlabel('Time [sec]')
